@@ -11,7 +11,7 @@ public class GamePlay {
     public void startGame() {
         creatureGenerator.generateCreatures();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Adventure begins!");
+        System.out.println("Ganster counter molester!");
         System.out.println("What is your name?");
         String input = scanner.nextLine();
         this.player = new Player(input);
@@ -20,19 +20,28 @@ public class GamePlay {
             Creature creature = creatureGenerator.getRandomCreature();
             System.out.println(creature.meet());
             while (creature.getHealth() > 0 && player.getHealth() > 0) {
-                System.out.println("Will you fight " + creature.getName() + " y/n?");
+                System.out.println("Will you molest " + creature.getName() + " y/n?");
                 String fighting = scanner.nextLine();
                 if(fighting.equals("n"))
                     break;
                 fight(creature);
+
                 if (creature.getHealth() <= 0) {
-                    System.out.println(creature.getName() + " is dead. " + player.getName() + " gets 2 healthpoints");
-                    player.changeHealth(2);
+                    if (creature instanceof SexualPredator) {
+                        System.out.println();
+                        System.out.println(creature.getName() + " is now dead" + "\n" + "\"He did not kill himself\"");
+                        System.out.println();
+                        player.changeHealth(30);
+                    } else {
+
+                        System.out.println(creature.getName() + " is dead. " + player.getName() + " gets 5 healthpoints");
+                        player.changeHealth(5);
+                    }
+                    System.out.println(player.getName() + " has " + player.getHealth() + " healthpoints");
+                    System.out.println(creature.getName() + " has " + creature.getHealth() + " healthpoints");
                 }
-                System.out.println(player.getName() + " has " + player.getHealth() + " healthpoints");
-                System.out.println(creature.getName() + " has " + creature.getHealth() + " healthpoints");
                 if(player.getHealth() <= 0) {
-                    System.out.println(player.getName() + " died.");
+                    System.out.println(player.getName() + " died and got molested.. in that order.");
                     break;
                 }
             }
@@ -40,7 +49,7 @@ public class GamePlay {
             input = scanner.nextLine();
 
         }
-        System.out.println("Game over");
+        System.out.println("Game over! you suck yourself keep going on sucking. Forever, Forever and ever!");
     }
 
 
@@ -52,13 +61,13 @@ public class GamePlay {
         System.out.println(player.getName() + " attacks with " + playerAttack);
         System.out.println(creature.getName() + " attacks with " + creatureAttack);
         if (playerAttack > creatureAttack) {
-            System.out.println(creature.getName() + " is damages by " + playerAttack + " points");
+            System.out.println(creature.getName() + " is molested by " + playerAttack + " points");
             creature.takeDamage(playerAttack);
         } else if (playerAttack < creatureAttack) {
-            System.out.println(player.getName() + " is damaged by " + creatureAttack + " points");
+            System.out.println(player.getName() + " is molested by " + creatureAttack + " points");
             player.changeHealth(-creatureAttack);
         } else
-            System.out.println("It is a tie! Nobody is damaged");
+            System.out.println("It is a tie! Nobody is molested");
 
     }
 

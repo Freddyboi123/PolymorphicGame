@@ -13,10 +13,15 @@ public class CreatureGenerator {
     }
 
     public void generateCreatures() {
-        creatures.add(new Spider("Shelob"));
-        creatures.add(new Dragon("Puff"));
-        creatures.add(new Spider("Peter"));
-        creatures.add(new Dragon("Smaug"));
+       /* creatures.add(new Spider("Daddy Freakylegs"));
+        creatures.add(new Dragon("SilverDragon Slut cuck"));
+        creatures.add(new Spider("Lille Peter Eddy Betty"));
+        creatures.add(new Dragon("Goon lord"));*/
+        creatures.add(new SexualPredator("Jeffry Epstein"));
+      // creatures.add(new SexualPredator("Bill Cosby"));
+      // creatures.add(new SexualPredator("Lars Løkke Rasmussen"));
+       //creatures.add(new SexualPredator("P. Diddy"));
+
     }
 
     public Creature getRandomCreature() {
